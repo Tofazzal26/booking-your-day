@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
-import { FaCalendarAlt } from "react-icons/fa"; // Icon import
+import { FaCalendarAlt } from "react-icons/fa";
+import CardTransparentStyle from "./DateCardStyle/DateCardStyle.module.css";
 
 const FirstDateSelect = () => {
   const [startDate, setStartDate] = useState(
@@ -11,12 +12,12 @@ const FirstDateSelect = () => {
   );
   const [endDate, setEndDate] = useState(moment().endOf("month").toDate());
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isCustomRangeActive, setIsCustomRangeActive] = useState(false); // Track Custom Range selection
+  const [isCustomRangeActive, setIsCustomRangeActive] = useState(false);
   const [selectedOption, setSelectedOption] = useState("This Month");
 
   const applyPresetRange = (type) => {
     const today = moment();
-    setIsCustomRangeActive(false); // Hide date pickers when switching presets
+    setIsCustomRangeActive(false);
     if (type === "Today") {
       setStartDate(today.toDate());
       setEndDate(today.toDate());
@@ -36,7 +37,7 @@ const FirstDateSelect = () => {
       setStartDate(moment().subtract(1, "months").startOf("month").toDate());
       setEndDate(moment().subtract(1, "months").endOf("month").toDate());
     } else if (type === "Custom Range") {
-      setIsCustomRangeActive(true); // Show date pickers for Custom Range
+      setIsCustomRangeActive(true);
     }
     setSelectedOption(type);
     setIsDropdownOpen(false);
@@ -45,26 +46,26 @@ const FirstDateSelect = () => {
   return (
     <div className="flex md:flex-row flex-col justify-between items-center">
       <div></div>
-      <div className="relative md:w-[400px] mt-[50px]">
-        {/* Dropdown Button */}
+      <div className="relative md:w-[400px] text-gray-400 mt-[60px]">
         <button
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-          className="w-full text-left bg-gray-100 p-2 border rounded flex justify-between items-center"
+          className={`w-full text-left  p-2   rounded flex justify-between items-center ${CardTransparentStyle.cardTransparent}`}
         >
           <span className="flex items-center gap-2">
-            <FaCalendarAlt className="text-blue-500" /> {/* Calendar Icon */}
+            <FaCalendarAlt className="text-blue-500" />
             {selectedOption !== "Custom Range"
               ? `${selectedOption} (${moment(startDate).format(
                   "MMM DD, YYYY"
                 )} - ${moment(endDate).format("MMM DD, YYYY")})`
               : "Custom Range"}
           </span>
-          <span>&#9662;</span> {/* Dropdown Arrow */}
+          <span>&#9662;</span>
         </button>
 
-        {/* Dropdown Options */}
         {isDropdownOpen && (
-          <div className="absolute bg-white border rounded mt-2 w-full z-10 shadow-md">
+          <div
+            className={`absolute rounded mt-2 text-gray-400 w-full z-10 shadow-md ${CardTransparentStyle.cardTransparent}`}
+          >
             {[
               "Today",
               "Yesterday",
@@ -85,7 +86,6 @@ const FirstDateSelect = () => {
           </div>
         )}
 
-        {/* Custom Range Picker */}
         {isCustomRangeActive && (
           <div className="mt-4 flex gap-4">
             <DatePicker

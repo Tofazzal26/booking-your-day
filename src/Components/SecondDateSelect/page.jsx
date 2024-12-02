@@ -4,8 +4,9 @@ import { FaCalendarAlt } from "react-icons/fa"; // Calendar icon
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io"; // Dropdown icons
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Swal from "sweetalert2";
 
-const DropdownDatePicker = () => {
+const SecondDateSelect = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -14,7 +15,6 @@ const DropdownDatePicker = () => {
 
   return (
     <div className="relative max-w-full">
-      {/* Dropdown Button */}
       <button
         onClick={toggleDropdown}
         className="flex items-center justify-between bg-white px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 w-full max-w-lg lg:max-w-3xl"
@@ -30,7 +30,6 @@ const DropdownDatePicker = () => {
         )}
       </button>
 
-      {/* Dropdown Content */}
       {isDropdownOpen && (
         <div
           className="absolute z-50 mt-2 bg-white border border-gray-300 rounded-lg shadow-lg w-full max-w-lg lg:max-w-3xl lg:w-[800px] p-4"
@@ -44,8 +43,8 @@ const DropdownDatePicker = () => {
 };
 
 const DateRangePickerWithGap = () => {
-  const [dateRange, setDateRange] = useState([null, null]); // Start and End Date
-  const [startDate, endDate] = dateRange; // Destructure dates
+  const [dateRange, setDateRange] = useState([null, null]);
+  const [startDate, endDate] = dateRange;
   const [activeOption, setActiveOption] = useState("Custom Range");
 
   const options = [
@@ -109,7 +108,7 @@ const DateRangePickerWithGap = () => {
 
   const handleApply = () => {
     if (startDate && endDate) {
-      alert(
+      Swal.fire(
         `Selected Date Range:\nStart: ${startDate.toDateString()}\nEnd: ${endDate.toDateString()}`
       );
     } else {
@@ -119,7 +118,6 @@ const DateRangePickerWithGap = () => {
 
   return (
     <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
-      {/* Left Sidebar */}
       <div className="w-full lg:w-1/3 border-r border-gray-300 p-4">
         <h3 className="font-semibold text-gray-700 mb-4">Quick Ranges</h3>
         <ul className="space-y-2">
@@ -139,11 +137,9 @@ const DateRangePickerWithGap = () => {
         </ul>
       </div>
 
-      {/* Right Content */}
       <div className="md:w-[800px] p-6">
         <h3 className="font-semibold text-gray-700 mb-4">Select Date Range</h3>
         <div className="flex flex-col md:flex-row justify-between items-start space-y-4 md:space-y-0 md:space-x-8">
-          {/* First Calendar */}
           <div>
             <p className="text-sm text-gray-500 mb-2">Start Date</p>
             <DatePicker
@@ -158,7 +154,7 @@ const DateRangePickerWithGap = () => {
               inline
             />
           </div>
-          {/* Second Calendar */}
+
           <div>
             <p className="text-sm text-gray-500 mb-2">End Date</p>
             <DatePicker
@@ -174,7 +170,7 @@ const DateRangePickerWithGap = () => {
             />
           </div>
         </div>
-        {/* Buttons */}
+
         <div className="mt-6 flex justify-between">
           <button
             onClick={handleCancel}
@@ -194,4 +190,4 @@ const DateRangePickerWithGap = () => {
   );
 };
 
-export default DropdownDatePicker;
+export default SecondDateSelect;

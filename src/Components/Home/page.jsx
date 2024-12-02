@@ -13,7 +13,7 @@ const HomePage = () => {
           <div>
             <FirstDateSelect />
           </div>
-          <div className="ml-[300px] mt-10">
+          <div className="md:ml-[300px] mt-10">
             <SecondDateSelect />
           </div>
         </div>
