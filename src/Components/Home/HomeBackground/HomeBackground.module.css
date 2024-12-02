@@ -1,0 +1,31 @@
+.first_div {
+  margin-top: 65px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: #e2e6e9;
+  clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+}
+
+.second_div {
+  margin-bottom: 0;
+  z-index: -1;
+  position: absolute;
+  right: 50%;
+  bottom: 43%;
+  transform: translate(50%, 50%);
+  width: 100%;
+  height: 100%;
+  background-color: #13131a;
+  /* clip-path: polygon(0% 0%, 100% 0%, 0% 100%); */
+}
+/* 
+.cardTransparent {
+  width: 400px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+} */

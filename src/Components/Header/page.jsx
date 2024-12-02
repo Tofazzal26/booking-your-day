@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Header = () => {
   return (
     <div>
@@ -9,9 +11,18 @@ const Header = () => {
             </div>
             <div>
               <ul className=" lg:flex hidden items-center gap-4">
-                <li>Home</li>
-                <li>News</li>
-                <li>About</li>
+                <li>
+                  {" "}
+                  <Link href="/">Home</Link>
+                </li>
+                <li>
+                  {" "}
+                  <Link href="/">News</Link>
+                </li>
+                <li>
+                  {" "}
+                  <Link href="/">About</Link>
+                </li>
               </ul>
             </div>
             <div>
