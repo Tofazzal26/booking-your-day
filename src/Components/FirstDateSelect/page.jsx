@@ -46,7 +46,7 @@ const FirstDateSelect = () => {
   return (
     <div className="flex md:flex-row flex-col justify-between items-center">
       <div></div>
-      <div className="relative md:w-[400px] text-gray-400 mt-[60px]">
+      <div className="relative md:w-[400px] text-gray-800 mt-[60px]">
         <button
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           className={`w-full text-left  p-2   rounded flex justify-between items-center ${CardTransparentStyle.cardTransparent}`}
@@ -64,7 +64,7 @@ const FirstDateSelect = () => {
 
         {isDropdownOpen && (
           <div
-            className={`absolute rounded mt-2 text-gray-400 w-full z-10 shadow-md ${CardTransparentStyle.cardTransparent}`}
+            className={`absolute rounded mt-2 text-gray-500 w-full z-10 shadow-md ${CardTransparentStyle.cardTransparent}`}
           >
             {[
               "Today",
