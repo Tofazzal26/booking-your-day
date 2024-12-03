@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import Footer from "@/Components/Footer/page";
 import Header from "@/Components/Header/page";
 import HomePage from "@/Components/Home/page";
