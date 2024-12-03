@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import BackgroundDesign from "./HomeBackground/HomeBackground.module.css"; // Ensure correct import path
 import FirstDateSelect from "../FirstDateSelect/page";
