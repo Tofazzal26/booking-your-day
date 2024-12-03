@@ -95,7 +95,7 @@ const FirstDateSelect = () => {
               startDate={startDate}
               endDate={endDate}
               placeholderText="Start Date"
-              className="border p-2 rounded w-full"
+              className=" p-2 rounded w-full"
             />
             <DatePicker
               selected={endDate}
@@ -104,7 +104,7 @@ const FirstDateSelect = () => {
               startDate={startDate}
               endDate={endDate}
               placeholderText="End Date"
-              className="border p-2 rounded w-full"
+              className=" p-2 rounded w-full"
             />
           </div>
         )}

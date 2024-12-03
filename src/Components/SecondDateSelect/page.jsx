@@ -5,6 +5,7 @@ import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io"; // Dropdown
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
+import CardTransparent from "./DateStyle/DateStyle.module.css";
 
 const SecondDateSelect = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -17,7 +18,7 @@ const SecondDateSelect = () => {
     <div className="relative max-w-full">
       <button
         onClick={toggleDropdown}
-        className="flex items-center justify-between bg-white px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 w-full max-w-lg lg:max-w-3xl"
+        className={`flex items-center justify-between ${CardTransparent.cardTransparent} px-4 py-2 borde border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 w-full max-w-lg lg:max-w-3xl`}
       >
         <div className="flex items-center space-x-2">
           <FaCalendarAlt className="text-blue-500" />
@@ -32,7 +33,7 @@ const SecondDateSelect = () => {
 
       {isDropdownOpen && (
         <div
-          className="absolute z-50 mt-2 bg-white border border-gray-300 rounded-lg shadow-lg w-full max-w-lg lg:max-w-3xl lg:w-[800px] p-4"
+          className={`absolute ${CardTransparent.cardTransparent} z-50 mt-2  border-gray-300 rounded-lg shadow-lg w-full max-w-lg lg:max-w-3xl lg:w-[800px] p-4`}
           style={{ minWidth: "320px" }}
         >
           <DateRangePickerWithGap />
@@ -148,7 +149,8 @@ const DateRangePickerWithGap = () => {
               selectsStart
               startDate={startDate}
               endDate={endDate}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              style={{ backgroundColor: "#f3f4f6 !important" }}
+              className="w-full px-4 py-2 border border-gray-300  rounded-lg focus:ring-blue-500 focus:border-blue-500"
               dateFormat="yyyy-MM-dd"
               placeholderText="Start Date"
               inline
@@ -163,7 +165,7 @@ const DateRangePickerWithGap = () => {
               selectsEnd
               startDate={startDate}
               endDate={endDate}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-4 py-2 border border-gray-300  rounded-lg focus:ring-blue-500 focus:border-blue-500"
               dateFormat="yyyy-MM-dd"
               placeholderText="End Date"
               inline
